@@ -96,4 +96,26 @@ public class WalletHelper {
         }
         PreferenceUtils.getInstance(context).saveWalletFileName(fileName);
     }
+
+    public Credentials loadWalletCredentials(String password) {
+        String fileName = PreferenceUtils.getInstance(context).getWalletFileName();
+        String fileAddress = context.getExternalCacheDir() + "/" + fileName;
+        Log.d(TAG, "Load filePath: " + fileAddress);
+        return loadCredentials(password, fileAddress);
+    }
+
+    private Credentials loadCredentials(String password, String fileAddress) {
+        Credentials credentials = null;
+        try {
+            File walletFilePathSource = new File(fileAddress);
+            ObjectMapper mapper = new ObjectMapper();
+            WalletFile walletFile = mapper.readValue(walletFilePathSource, WalletFile.class);
+            credentials = Credentials.create(Wallet.decrypt(password, walletFile));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (CipherException ce) {
+            ce.printStackTrace();
+        }
+        return credentials;
+    }
 }

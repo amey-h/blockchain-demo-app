@@ -9,7 +9,20 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/text_head1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:text="Create Wallet"
+        android:textColor="@color/head_text_color"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"/>
+
     <LinearLayout
+        android:id="@+id/lin1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
@@ -28,7 +41,72 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Create Wallet" />
+            android:text="Create Wallet"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_head2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:text="Load Credentials"
+        android:textColor="@color/head_text_color"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"
+        android:paddingTop="15dp"/>
+
+    <LinearLayout
+        android:id="@+id/lin2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/edit_password_enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Enter Password" />
+
+        <Button
+            android:id="@+id/btn_load_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Load Credentials"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/text_wallet_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="13sp"
+            android:text="Wallet Address: "
+            android:textColor="@color/text_color"/>
+
+        <TextView
+            android:id="@+id/text_wallet_pvtkey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="13sp"
+            android:text="Pvt Key: "
+            android:textColor="@color/text_color"/>
+
+        <TextView
+            android:id="@+id/text_wallet_publickey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="13sp"
+            android:text="Public Key: "
+            android:textColor="@color/text_color"/>
 
     </LinearLayout>
 
